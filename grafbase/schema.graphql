@@ -1,0 +1,13 @@
+type Post @model {
+  id: ID!
+  title: String!
+  slug: String! @unique
+  content: String
+  comments: [Comment]
+}
+
+type Comment @model {
+  id: ID!
+  message: String!
+  published: Boolean @default(value: false)
+}
